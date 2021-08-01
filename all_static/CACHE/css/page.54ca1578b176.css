@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+/* line 5, src/static/scss/page.scss */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
+/* line 11, src/static/scss/page.scss */
+body {
+  color: white;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Poppins', sans-serif; }
+  /* line 18, src/static/scss/page.scss */
+  body .content {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #333;
+    background-image: linear-gradient(135deg, #222, #504f4f);
+    position: relative;
+    transform-origin: left;
+    transform-style: preserve-3d; }
+    /* line 28, src/static/scss/page.scss */
+    body .content .navbar {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 3rem;
+      z-index: 10; }
+      /* line 36, src/static/scss/page.scss */
+      body .content .navbar .menu {
+        max-width: 150rem;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        /* line 45, src/static/scss/page.scss */
+        body .content .navbar .menu .logo {
+          font-size: 1.1rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          line-height: 4rem; }
+        /* line 52, src/static/scss/page.scss */
+        body .content .navbar .menu .hamburger-menu {
+          position: fixed;
+          top: 0px;
+          right: 2rem;
+          width: 3rem;
+          height: 4rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer; }
+          /* line 63, src/static/scss/page.scss */
+          body .content .navbar .menu .hamburger-menu .bar {
+            width: 2.5rem;
+            height: 2.2px;
+            border-radius: 2px;
+            background-color: #eee;
+            transition: all 0.5s;
+            position: relative; }
+            /* line 71, src/static/scss/page.scss */
+            body .content .navbar .menu .hamburger-menu .bar:before, body .content .navbar .menu .hamburger-menu .bar:after {
+              content: "";
+              position: absolute;
+              width: inherit;
+              height: inherit;
+              background-color: #eee;
+              transition: all 0.5s; }
+            /* line 80, src/static/scss/page.scss */
+            body .content .navbar .menu .hamburger-menu .bar:before {
+              transform: translateY(-9px); }
+            /* line 83, src/static/scss/page.scss */
+            body .content .navbar .menu .hamburger-menu .bar:after {
+              transform: translateY(9px); }
+    /* line 92, src/static/scss/page.scss */
+    body .content .page-wrapper {
+      width: 100vw;
+      height: 100vh;
+      padding: 2rem;
+      position: absolute; }
+      /* line 98, src/static/scss/page.scss */
+      body .content .page-wrapper .page {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border: 2px solid #08520e;
+        overflow-x: scroll; }
+        /* line 105, src/static/scss/page.scss */
+        body .content .page-wrapper .page .banner {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
+          /* line 112, src/static/scss/page.scss */
+          body .content .page-wrapper .page .banner h1 {
+            font-size: 32px; }
+  /* line 122, src/static/scss/page.scss */
+  body .content.active .bar {
+    transform: rotate(360deg);
+    background-color: transparent !important; }
+    /* line 126, src/static/scss/page.scss */
+    body .content.active .bar::before {
+      transform: translateY(0) rotate(45deg) !important;
+      background-color: #08520e !important; }
+    /* line 131, src/static/scss/page.scss */
+    body .content.active .bar::after {
+      transform: translateY(0) rotate(-45deg) !important;
+      background-color: #08520e !important; }
+  /* line 137, src/static/scss/page.scss */
+  body .content.active .page-wrapper {
+    transform: prspective(1300px) rotateY(25deg) scale(0.5) !important; }
+
+@media (max-width: 768px) {
+  /* line 145, src/static/scss/page.scss */
+  body .page-wrapper {
+    padding: 20px; } }

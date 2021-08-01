@@ -1,0 +1,34 @@
+/* line 1, static/scss/header.scss */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
+/* line 7, static/scss/header.scss */
+body {
+  background: #333;
+  color: white;
+  overflow: hidden;
+  position: relative; }
+  /* line 13, static/scss/header.scss */
+  body .nav-btn {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 0px;
+    background-color: transparent;
+    border: 1px solid #ca0505; }
+  /* line 22, static/scss/header.scss */
+  body .full-menu {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #ca0505;
+    overflow: hidden;
+    overflow-y: scroll;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0s 0.3s; }

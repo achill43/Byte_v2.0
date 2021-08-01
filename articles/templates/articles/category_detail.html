@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{curr_category.title }}{% endblock title %}
+
+{% block page %}
+    <div class="white-wrapper">
+        <div class="page-container">
+            <h2 class="title"><span>{{curr_category.title }}</span></h2>
+            <div class="byte_accordion">
+                    {% if curr_category.get_publish_articles %}
+                        <div class="accordion-item js-acordion-item">
+                            <div class="accordion-label">
+                                {% if curr_category.icon %}
+                                    {{ curr_category.icon|safe }}
+                                {% endif %}
+                                {{ curr_category.title }}
+                            </div>
+                            <div class="accordion-content">
+                                <div class="articles-wrap">
+                                    {% for article in curr_category.get_publish_articles %}
+                                        <a href="{{ article.get_absolute_url }}" class="article-link"
+                                                data-title="{{ article.title }}">
+                                            {{ article.title }}
+                                        </a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% for cat in children_categories %}
+                    <div class="accordion-item js-acordion-item">
+                        <div class="accordion-label">
+                            {% if cat.icon %}
+                                {{ cat.icon|safe }}
+                            {% endif %}
+                            {{ cat.title }}
+                        </div>
+                        <div class="accordion-content">
+                            <div class="articles-wrap">
+                                {% for article in cat.get_publish_articles %}
+                                    <a href="{{ article.get_absolute_url }}" class="article-link"
+                                            data-title="{{ article.title }}">
+                                        {{ article.title }}
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            {% comment %} <div class="tabs">
+                <div class="tabs-nav">
+                    {% for cat in children_categories %}
+                        <button class="tabs_nav_btn js-tabs-btn 
+                        {% if forloop.first %}
+                            active
+                        {% endif %}" data-tab="{{ cat.slug }}">
+                            {% if cat.icon %}
+                                {{ cat.icon|safe }}
+                            {% endif %}
+                            {{ cat.title }}
+                        </button>
+                    {% endfor %}
+                </div>
+                <div class="tab-content">
+
+                {% for cat in children_categories %}
+                    <div class="tab-item js-tabs-item {% if forloop.first %}
+                        active
+                    {% endif %}" id="{{ cat.slug }}">
+                        <div class="articles-wrap">
+                        {% for article in cat.get_publish_articles %}
+                            <a href="{{ article.get_absolute_url }}" class="article-link"
+                                    data-title="{{ article.title }}">
+                                {{ article.title }}
+                            </a>
+                        {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div> {% endcomment %}
+        </div>
+    </div>
+{% endblock page %}
+
+{% block footer %}
+<div class="footer">
+    <div class="page-container">
+        <p>&copy; {% now "Y" %} <span class="logo">{% trans 'Byte' %}</span>. {% trans 'All rule is protected' %}.</p>
+    </div>
+</div>
+{% endblock footer %}

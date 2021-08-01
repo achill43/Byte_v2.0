@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+
+{% block title %}Test{% endblock title %}
+
+{% block page %}
+    <div class="white-wrapper">
+        <div class="page-container">
+            <div class="article-wrapper">
+            <!--Write text here-->
+<h2 class="title"><span></span></h2>
+
+</div>
+
+
+
+            <div class="article-wrapper">
+                <hr>
+                <div class="remark">
+                    <div class="bookmark">
+                        ! Примечание
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, dolore! Sapiente corrupti sed perferendis 
+                        itaque accusantium molestiae ab qui excepturi corporis maxime eos ipsam voluptate, est harum, ad dolorem 
+                        nobis a tempore dolores cupiditate, error aliquid! Aliquid delectus voluptates blanditiis nobis voluptatum 
+                        corporis tenetur provident ipsam? Itaque possimus officia sed culpa laboriosam voluptatibus laudantium 
+                        eligendi enim commodi. Vitae molestiae ipsum, enim adipisci asperiores, non ipsa et ullam velit quidem 
+                        labore officia. Quae voluptate eius sequi omnis provident, cupiditate quaerat perferendis eveniet 
+                        recusandae, quisquam atque non qui laborum voluptatum doloremque! Asperiores placeat quae deserunt sint 
+                        exercitationem similique sed reiciendis eos iusto.
+                    </p>
+                </div>
+                <p>
+                    &lt; - Знак "меньше чем" (начало тега)
+                </p>
+                <p>
+                    &gt; - Знак "больше чем" (конец тега)
+                </p>
+                <p>
+                    <span class="img-wrapper">
+                        <img alt="" src="{{ image_list.0.img_file.url }}"/>
+                    </span>
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <th class="danger">Column1</th>
+                            <th class="danger">Column2</th>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                    <td>Row1_1</td>
+                                    <td>Row1_2</td>
+                                </tr><tr>
+                                    <td>Row2_1</td>
+                                    <td>Row2_2</td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock page %}

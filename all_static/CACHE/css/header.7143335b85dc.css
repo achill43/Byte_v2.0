@@ -1,0 +1,21 @@
+/* line 1, static/scss/header.scss */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
+/* line 7, static/scss/header.scss */
+body {
+  background: #333;
+  color: white;
+  overflow: hidden;
+  position: relative; }
+  /* line 13, static/scss/header.scss */
+  body .nav-btn {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 0px;
+    background-color: transparent;
+    border: 1px solid #ca0505; }

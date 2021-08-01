@@ -1,0 +1,15 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@font-face {
+    font-family: "Kungfont";
+    src: url("fonts/Kungfont/Kungfont-Regular.ttf");
+}
+
+
+// SCSS part files
+@import "variables";
+@import "icon_conf";
+@import "header";
+@import "page";
+@import "footer";

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+
+{% block page %}
+    <canvas id="matrix_canvas"></canvas>
+    <div class="banner">
+        <h1 class="header-title">{% trans "<span>B</span>yte" %}</h1>
+        <h3>{% trans "<span>P</span>rodramming <span>d</span>irectory" %}</h3>
+    </div>
+{% endblock page %}
+
+{% block extra_js %}
+    <script src="{% static 'js/maxrix.js' %}"></script>
+{% endblock %}

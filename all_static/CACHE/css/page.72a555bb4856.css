@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Play&display=swap");
+/* line 3, static/scss/page.scss */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
+/* line 9, static/scss/page.scss */
+body {
+  color: white;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Play', sans-serif; }
+  /* line 16, static/scss/page.scss */
+  body .content {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #222;
+    background-image: linear-gradient(135deg, #08520e 30%, #02860d);
+    position: relative; }
+    /* line 23, static/scss/page.scss */
+    body .content .main {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-origin: left;
+      transform-style: preserve-3d; }
+    /* line 30, static/scss/page.scss */
+    body .content .sidebar {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      width: 33%;
+      height: 100%;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      /* line 40, static/scss/page.scss */
+      body .content .sidebar .menu-list {
+        list-style: none; }
+        /* line 43, static/scss/page.scss */
+        body .content .sidebar .menu-list li a {
+          color: #fff;
+          text-decoration: none;
+          font-size: 2rem;
+          width: 100%;
+          padding: 10px; }
+          /* line 50, static/scss/page.scss */
+          body .content .sidebar .menu-list li a:hover {
+            text-decoration: none; }
+    /* line 57, static/scss/page.scss */
+    body .content .navbar {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 3rem;
+      z-index: 10; }
+      /* line 65, static/scss/page.scss */
+      body .content .navbar .menu {
+        max-width: 150rem;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        /* line 74, static/scss/page.scss */
+        body .content .navbar .menu .logo {
+          font-size: 1.1rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          line-height: 4rem; }
+        /* line 81, static/scss/page.scss */
+        body .content .navbar .menu .hamburger-menu {
+          position: fixed;
+          top: 0px;
+          right: 2rem;
+          width: 3rem;
+          height: 4rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          z-index: 5; }
+          /* line 93, static/scss/page.scss */
+          body .content .navbar .menu .hamburger-menu .bar {
+            width: 2.5rem;
+            height: 2.2px;
+            border-radius: 2px;
+            background-color: #eee;
+            transition: all 0.5s;
+            position: relative; }
+            /* line 101, static/scss/page.scss */
+            body .content .navbar .menu .hamburger-menu .bar:before, body .content .navbar .menu .hamburger-menu .bar:after {
+              content: "";
+              position: absolute;
+              width: inherit;
+              height: inherit;
+              background-color: #eee;
+              transition: all 0.5s; }
+            /* line 110, static/scss/page.scss */
+            body .content .navbar .menu .hamburger-menu .bar:before {
+              transform: translateY(-9px); }
+            /* line 113, static/scss/page.scss */
+            body .content .navbar .menu .hamburger-menu .bar:after {
+              transform: translateY(9px); }
+    /* line 122, static/scss/page.scss */
+    body .content .page-wrapper {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      transform-origin: left;
+      transform-style: preserve-3d;
+      background-color: #222;
+      z-index: 2;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      transition: transform 0.5s ease-in-out; }
+      /* line 132, static/scss/page.scss */
+      body .content .page-wrapper .page-anchor {
+        position: relative;
+        padding: 3rem;
+        width: 100%;
+        height: 100%; }
+        /* line 137, static/scss/page.scss */
+        body .content .page-wrapper .page-anchor #matrix_canvas {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0; }
+      /* line 146, static/scss/page.scss */
+      body .content .page-wrapper .page {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border: 2px solid #08520e;
+        overflow-x: scroll;
+        z-index: 100; }
+        /* line 154, static/scss/page.scss */
+        body .content .page-wrapper .page::-webkit-scrollbar {
+          width: 0; }
+        /* line 158, static/scss/page.scss */
+        body .content .page-wrapper .page .banner {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          text-align: center; }
+          /* line 167, static/scss/page.scss */
+          body .content .page-wrapper .page .banner h1 {
+            font-size: 10rem; }
+          /* line 170, static/scss/page.scss */
+          body .content .page-wrapper .page .banner span {
+            color: #08520e; }
+          /* line 173, static/scss/page.scss */
+          body .content .page-wrapper .page .banner h3 {
+            font-size: 2rem; }
+          /* line 176, static/scss/page.scss */
+          body .content .page-wrapper .page .banner .scroll-btn {
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border: none;
+            font-size: 3.4rem;
+            text-align: center;
+            margin-top: 40px;
+            cursor: pointer;
+            color: #08520e; }
+            /* line 187, static/scss/page.scss */
+            body .content .page-wrapper .page .banner .scroll-btn:hover {
+              color: #fff; }
+        /* line 192, static/scss/page.scss */
+        body .content .page-wrapper .page .white-wrapper {
+          background-color: #fff;
+          color: #000; }
+        /* line 196, static/scss/page.scss */
+        body .content .page-wrapper .page .page-container {
+          max-width: 1200px;
+          margin: 0px auto;
+          padding: 0px 15px; }
+          /* line 200, static/scss/page.scss */
+          body .content .page-wrapper .page .page-container .title {
+            padding: 10px 10px 20px; }
+            /* line 202, static/scss/page.scss */
+            body .content .page-wrapper .page .page-container .title span {
+              padding: 5px 20px;
+              border-bottom: 3px solid #08520e; }
+  /* line 214, static/scss/page.scss */
+  body .content.active .bar {
+    transform: rotate(360deg);
+    background-color: transparent !important; }
+    /* line 218, static/scss/page.scss */
+    body .content.active .bar::before {
+      transform: translateY(0) rotate(45deg) !important; }
+    /* line 222, static/scss/page.scss */
+    body .content.active .bar::after {
+      transform: translateY(0) rotate(-45deg) !important; }
+  /* line 227, static/scss/page.scss */
+  body .content.active .page-wrapper {
+    cursor: pointer;
+    transform: perspective(1300px) rotateY(25deg) translateZ(200px) scale(0.7) !important; }
+
+@media (max-width: 768px) {
+  /* line 237, static/scss/page.scss */
+  body .content .page-wrapper {
+    padding: 15px; }
+    /* line 241, static/scss/page.scss */
+    body .content .page-wrapper .page .banner h1 {
+      font-size: 8rem; }
+    /* line 244, static/scss/page.scss */
+    body .content .page-wrapper .page .banner h3 {
+      font-size: 1.6rem; }
+  /* line 250, static/scss/page.scss */
+  body .content .sidebar {
+    width: 100%; }
+  /* line 253, static/scss/page.scss */
+  body .content .navbar .menu .hamburger-menu {
+    right: 15px; }
+  /* line 258, static/scss/page.scss */
+  body .content.active .page-wrapper {
+    cursor: pointer;
+    transform: perspective(1300px) rotateY(25deg) translateZ(200px) translateX(-100%) scale(0.7) !important; } }

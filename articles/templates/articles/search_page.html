@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}{{curr_category.title }}{% endblock title %}
+
+{% block page %}
+    <div class="white-wrapper">
+        <div class="page-container">
+            <h2 class="title"><span>{{ search_str }}</span></h2>
+            <div class="articles-wrap">
+                {% for article in articles %}
+                    <a href="{{ article.get_absolute_url }}" class="article-link"
+                            data-title="{{ article.title }}">
+                        {{ article.title }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock page %}

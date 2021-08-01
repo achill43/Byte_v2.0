@@ -1,0 +1,10 @@
+/* line 1, static/scss/header.scss */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
+/* line 6, static/scss/header.scss */
+body {
+  background: #333;
+  color: white; }

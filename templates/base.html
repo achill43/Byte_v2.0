@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+{% load static compress i18n %}
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Byte{% endblock title %} </title>
+
+    {% compress css %}
+        {% comment %} <link rel="stylesheet" href="{% static 'assets/bootstrap-5.0.2-dist/css/bootstrap.min.css' %}" type="text/css"> {% endcomment %}
+
+        <link rel="stylesheet" href="{% static 'scss/styles.scss' %}" type="text/scss">
+        {% block extra_css %}{% endblock %}
+    {% endcompress %}
+    
+</head>
+<body>
+    <script src="https://kit.fontawesome.com/a3df1cec44.js" crossorigin="anonymous"></script>
+    <div class="content">
+        <div class="main">
+            <header>
+                <div class="navbar">
+                    <div class="menu">
+                        <h3 class="logo">
+                            <a href="{% url 'home_page' %}">Byte</a>
+                        </h3>
+                        <div class="hamburger-menu">
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="logo-wrapper">
+                        <h3 class="logo">
+                            <a href="{% url 'home_page' %}">Byte</a>
+                        </h3>
+                    </div>
+
+                    <div>
+                        <form action="{% url 'search_page' %}" class="search-form2 js-search-form">
+                            <meta data-url="{% url 'ajax_search' %}"
+                                                    class="js-search-ajax-url">
+                            <input type="text" name="search_str" class="search-input js-search-input"
+                                    placeholder="{% trans "Enter search text" %}"
+                                    autocomplete="off">
+                            <div class="search-result-block js-search-result"></div>
+                            <div class="search-btn js-search-btn">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="cancel-btn js-search-cancel">
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </form>
+                        {% comment %} <form action="{% url 'search_page' %}" class="search-form js-search-form">
+                            <meta data-url="{% url 'ajax_search' %}"
+                                                    class="js-search-ajax-url">
+                            <input type="text" name="search_str" class="search-input js-search-input">
+                            <div class="search-result-block js-search-result"></div>
+                            <button class="search-btn"><i class="fas fa-search"></i></button>
+                        </form> {% endcomment %}
+                    </div>
+                    <div>
+
+                    <div>
+                        <form action="{% url 'set_language' %}" method="post" 
+                                class="search-form js-lang-form">
+                            {% csrf_token %}
+                            <input name="next" type="hidden" value="{{ redirect_to }}" >
+                            <select name="language" class="search-input js-select-lang">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                    <option value="{{ language.code }}"
+                                            {% if language.code == LANGUAGE_CODE %} 
+                                                selected="selected"
+                                            {% endif %} >
+                                        {{ language.name_local }} ({{ language.code }})
+                                    </option>
+                                {% endfor %}
+                            </select>
+                            <button class="search-btn">
+                                <i class="fas fa-globe"></i>
+                            </button>
+                        </form>
+                    <nav class="navMenu">
+                        <ul>
+                            {% for category in categories %}
+                                <li>
+                                    <a href="{{ category.get_absolute_url }}">
+                                        <div class="item-before">
+                                            {% if category.icon %}
+                                                <span class="icon-wrap">
+                                                    {{ category.icon|safe }}
+                                                </span>
+                                            {% endif %} {{ category.title }}
+                                        </div>
+                                        <div class="item-after">
+                                            {% if category.icon %}
+                                                <span class="icon-wrap">
+                                                    {{ category.icon|safe }}
+                                                </span>
+                                            {% endif %} {{ category.title }}
+                                        </div>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+
+            
+
+            <div class="shadow-one"></div>
+            <div class="shadow-two"></div>
+
+            <section class="page-wrapper">
+                    <div class="page">
+                        {% block page %}{% endblock page %}
+                        
+                        {% block footer %}{% endblock footer %}
+                    </div>
+            </section>
+        </div>
+    </div>
+    {% compress js %}
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+        {% block extra_js %}{% endblock %}
+    {% endcompress %}
+</body>
+</html>
